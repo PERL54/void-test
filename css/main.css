@@ -1,0 +1,169 @@
+@font-face {
+    font-family: "BESAN";
+    src: url("../fonts/Besan.otf") format("opentype");
+}
+
+body
+{
+	margin: 0;
+	padding: 0;
+	max-height: 100vh;
+	background-color: black;
+	color: white;
+}
+
+.main
+{
+	display: grid;
+	grid-template-columns: 2fr 2.5fr 2.5fr 2fr;
+	grid-template-rows: 1fr;
+	grid-template-areas: ". container container .";
+}
+
+.container
+{
+	grid-area: container;
+	background-color: black;
+	display: grid;
+	grid-template-columns: 1fr 6fr 1fr;
+	grid-template-rows: 1fr;
+	grid-template-areas: "line1 container2 line2";
+
+}
+
+.container2
+{
+	grid-area: container2;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 2fr 1fr;
+	grid-template-areas: "logo" "text";
+}
+
+.text
+{
+	grid-area: text;
+	justify-self: center;
+	align-self: center;
+	font-size: calc(1em + 2vw);
+	font-family: 'BESAN';
+}
+
+#text2
+{
+	position: relative;
+	color: black;
+	top: 2px;
+	left: -2px;
+}
+
+#text3
+{
+	position: relative;
+	color: white;
+	top: 6px;
+	left: -6px;
+}
+
+.logo
+{
+	grid-area: logo;
+	justify-self: center;
+	align-self: center;
+	height: 500px;
+	width: 500px;
+	border-radius: 50%;
+	box-shadow: 0px 0px 50px 20px rgba(255, 255, 255, 1);
+	animation: 5s blend infinite cubic-bezier(0.46, 0.03, 0.52, 0.96);
+}
+
+.japan1
+{
+	grid-area: line1;
+	height: 100vh;
+	width: 50px;
+	background-image: url("kavo.jpg");
+	animation: 5s anim1 infinite linear;
+	justify-self: left;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+	
+}
+
+.japan2
+{
+	grid-area: line2;
+	height: 100vh;
+	width: 50px;
+	background-image: url("kavo.jpg");
+	animation: 5s anim2 infinite linear;
+	justify-self: right;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+}
+
+@keyframes anim2
+{
+   from {
+      background-position: 0 0;
+   }
+   to {
+      background-position: 0 354px;
+   }
+}
+
+@keyframes anim1
+{
+   from {
+      background-position: 0 0;
+   }
+   to {
+      background-position: 0 -354px;
+   }
+}
+
+@keyframes blend
+{
+   0% {
+      box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 1);
+   }
+   50% {
+      box-shadow: 0px 0px 50px 20px rgba(255, 255, 255, 1);
+   }
+   100% {
+      box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 1);
+   }
+}
+
+
+@media screen and (max-width: 480px) 
+{
+
+.main
+{
+	display: grid;
+	grid-template-columns: 2fr 2.5fr 2.5fr 2fr;
+	grid-template-rows: 1fr;
+	grid-template-areas: "container container container container";
+}
+
+.logo
+{
+	grid-area: logo;
+	justify-self: center;
+	align-self: center;
+	height: 30vh;
+	width: 30vh;
+	border-radius: 50%;
+	box-shadow: 0px 0px 30px 0px rgba(255, 255, 255, 1);
+	animation: 0;
+}
+
+.text
+{
+	font-size: 3em;
+	text-align: center;
+	line-height: 1.5;
+}
+
+}
